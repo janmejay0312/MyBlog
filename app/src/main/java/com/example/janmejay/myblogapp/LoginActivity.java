@@ -67,7 +67,7 @@ checkUserExistence();
                     }
                     else
                     {
-   Toast.makeText(LoginActivity.this,"Login Failed",Toast.LENGTH_SHORT);
+   Toast.makeText(LoginActivity.this,"Login Failed",Toast.LENGTH_SHORT).show();
                     }
                 }
             });
@@ -85,7 +85,7 @@ checkUserExistence();
      startActivity(intent);
                 }
                 else
-                    Toast.makeText(LoginActivity.this,"does not exist",Toast.LENGTH_LONG);
+                    Toast.makeText(LoginActivity.this,"does not exist",Toast.LENGTH_LONG).show();
 
             }
 

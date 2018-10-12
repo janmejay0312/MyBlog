@@ -17,6 +17,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="280dp"
+            android:elevation="40dp"
+            app:cardCornerRadius="15dp"
             android:background="@drawable/text"
             android:padding="20dp">
 
@@ -30,6 +32,7 @@
                 android:fitsSystemWindows="true"
                 android:inputType="textMultiLine"
                 android:padding="10dp"
+                android:background="@drawable/line_divider"
                 android:scrollbars="horizontal"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Widget.ActionMode.Title"
                 android:textColor="@color/Black"
@@ -42,7 +45,7 @@
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
-            android:layout_height="52dp"
+            android:layout_height="60dp"
             android:layout_alignParentTop="true"
             android:layout_marginTop="215dp"
 

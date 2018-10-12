@@ -1,5 +1,6 @@
 package com.example.janmejay.myblogapp;
 
+import android.app.ActionBar;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
@@ -8,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -59,6 +61,11 @@ public class PostActivity extends AppCompatActivity {
         submit = findViewById(R.id.button);
         title = findViewById(R.id.editText);
         Log.d("message","recreated");
+
+        android.support.v7.app.ActionBar a=getSupportActionBar();
+        assert a != null;
+        a.setHomeButtonEnabled(true);
+        a.setDisplayHomeAsUpEnabled(true);
         description = findViewById(R.id.editText2);
         mstorage = FirebaseStorage.getInstance().getReference();
         mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -155,5 +162,13 @@ public class PostActivity extends AppCompatActivity {
 
 
     }
-
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
+            case android.R.id.home:
+                Intent homeIntent = new Intent(this, MainActivity.class);
+                homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(homeIntent);
+        }
+        return (super.onOptionsItemSelected(menuItem));
+    }
 }

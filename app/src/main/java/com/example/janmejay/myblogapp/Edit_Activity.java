@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -39,7 +40,10 @@ private static final int GALLERY_INTENT=2;
         gImage=findViewById(R.id.imageView);
         databaseRef=FirebaseDatabase.getInstance().getReference();
 
-
+        ActionBar b=getSupportActionBar();
+        assert b!=null;
+        b.setHomeButtonEnabled(true);
+        b.setDisplayHomeAsUpEnabled(true);
         Bundle bundle=getIntent().getExtras();
         String Des = bundle.getString("description");
         String title=bundle.getString("title");
@@ -48,5 +52,14 @@ private static final int GALLERY_INTENT=2;
         gData.setText(Des);
         mDes.setText(title);
 
+    }
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
+            case android.R.id.home:
+                Intent homeIntent = new Intent(this, MainActivity.class);
+                homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(homeIntent);
+        }
+        return (super.onOptionsItemSelected(menuItem));
     }
 }

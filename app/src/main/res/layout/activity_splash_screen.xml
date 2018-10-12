@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Blue"
+    android:background="@color/SkyBlue"
     tools:context=".SplashScreen">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Welcome"
         android:layout_centerInParent="true"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="150dp"
         android:textSize="40sp"
-        android:textColor="@color/Aqua"/>
+        android:textColor="@color/Blue"/>
 
 
 

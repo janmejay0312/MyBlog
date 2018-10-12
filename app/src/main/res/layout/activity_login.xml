@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/PaleVioletRed"
     tools:context=".LoginActivity">
     <TextView
         android:layout_width="match_parent"
@@ -14,6 +15,11 @@
         android:textSize="50dp"
         android:textStyle="bold"
         android:layout_marginTop="80dp"/>
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/usernameWrapper"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content">
     <EditText
         android:id="@+id/Email"
         android:layout_width="match_parent"
@@ -25,6 +31,12 @@
         android:layout_marginTop="20dp"
         android:textStyle="bold"
         android:inputType="textEmailAddress" />
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/passwordWrapper"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content">
 
     <EditText
         android:id="@+id/password"
@@ -37,6 +49,7 @@
         android:hint="password"
         android:ems="10"
         android:inputType="numberPassword" />
+    </android.support.design.widget.TextInputLayout>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

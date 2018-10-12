@@ -4,9 +4,11 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,6 +39,10 @@ private ProgressDialog mprogressBar;
         register=findViewById(R.id.register);
         firebaseAuth=FirebaseAuth.getInstance();
         firebaseDatabase=FirebaseDatabase.getInstance().getReference().child("User");
+        ActionBar c=getSupportActionBar();
+        assert c!=null;
+        c.setHomeButtonEnabled(true);
+        c.setDisplayHomeAsUpEnabled(true);
         mprogressBar=new ProgressDialog(this);
         register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,5 +75,14 @@ private ProgressDialog mprogressBar;
             });
 
         }
+    }
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
+            case android.R.id.home:
+                Intent homeIntent = new Intent(this, LoginActivity.class);
+                homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(homeIntent);
+        }
+        return (super.onOptionsItemSelected(menuItem));
     }
 }
