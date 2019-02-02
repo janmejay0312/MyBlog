@@ -23,6 +23,7 @@
         <activity android:name=".Edit_Activity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />
+        <activity android:name=".Your_Activity" />
     </application>
 
 </manifest>

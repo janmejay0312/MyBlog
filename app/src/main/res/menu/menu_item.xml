@@ -15,4 +15,9 @@
         android:id="@+id/action_logout"
         android:title="LogOut"
         app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_your_activity"
+        android:title="Your Blog"
+        app:showAsAction="always"/>
+
 </menu>
